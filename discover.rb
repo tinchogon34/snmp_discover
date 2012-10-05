@@ -16,7 +16,7 @@ gateway ||= `ip route show`.match(/default.*/)[0].match(
 # get mask
 mask ||= `ip route show`.match(/.*src.*/)[0].match(/\/\d\d/)[0].match(/\d\d/)
 
-system("fping -q -g #{gateway}/#{mask}")# > /dev/null 2>&1")
+system("fping -q -g #{gateway}/#{mask} > /dev/null 2>&1")
 
 ifTable_columns = ["ipNetToMediaPhysAddress", "ipNetToMediaNetAddress"]
 
